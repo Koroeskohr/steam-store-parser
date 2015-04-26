@@ -3,7 +3,7 @@ module SteamStoreParser
     attr_reader :games
 
     PAGE_AMOUNT_CSS = '.search_pagination_right a'
-    CONTAINER_CSS = '#search_result_container div' #[1]
+    CONTAINER_CSS = '#search_result_container div'
 
     def initialize(category)
       puts "Parsing... it might take a while"

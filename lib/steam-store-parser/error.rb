@@ -1,4 +1,3 @@
 module SteamStoreParser
-  class TableExistsError < StandardError; end
-
+  # TODO : write errors
 end
