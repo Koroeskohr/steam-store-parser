@@ -1,0 +1,1 @@
+require 'steam-store-parser'
