@@ -1,8 +1,12 @@
 # steam-store-parser
-## Parses Steam's web store to get lists of games from categories or keywords
+*Parses Steam's web store to get lists of games from categories or keywords*
 
-This is my first gem, it might lack a few of the best practices but I've tried to stick to what I read.
+```ruby
+# see full tag list in SteamStoreParser::Parameters
+params = {:tags => [:action, :adventure], :player_amount => :singleplayer, :os => :linux}
+parser = SteamStoreParser::Parser.new(params)
 
-Still not over yet, it's a basic working prototype with a few parsables categories.
+parser.games # gives you access to an array of games with the title of the game and the steamapp id
+```
 
 Feel free to participate !
