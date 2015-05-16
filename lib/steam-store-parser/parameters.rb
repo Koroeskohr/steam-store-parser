@@ -1,6 +1,6 @@
 module SteamStoreParser
 
-  # TODO if publishing : add more categories
+  # TODO : add more tags
   module Parameters
 
     TAGS = {
