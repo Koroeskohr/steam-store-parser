@@ -9,19 +9,13 @@ module SteamStoreParser
       @url = build_url(params)
     end
 
-    # @param [Hash] Parameters
     # @see SteamStoreParser::Parameters
-    # @param [Number] page number
     # @return [String] Webpage
     def page(page)
-      raise ArgumentError unless page.is_a? Numeric
       RestClient.get "#{@url}&page=#{page}"
     end
 
-
-    # @param [Hash] Parameters
-    # @see SteamStoreParser::Parameters
-    # @return [String] Webpage
+    # @return [String] the HTML source of the page
     def home_page
       page(1)
     end
@@ -32,21 +26,19 @@ module SteamStoreParser
         params.each { |key, value| params[key] = [value] unless value.is_a? Array }
 
         if params.has_key? :tags
-          tags = params[:tags].map! {|tag| Parameters::tag_id(tag)}
+          tags = params[:tags].map! {|tag| Parameters::TAGS.fetch(tag)}
           url << "tags=#{tags.join(',')}&"
         end
         if params.has_key? :os
-          os = params[:os].map! {|os| Parameters::os_id(os)}
+          os = params[:os].map! {|os| Parameters::OS.fetch(os)}
           url << "os=#{os.join(',')}&"
         end
         if params.has_key? :player_amount
-          player_amount = params[:player_amount].map! {|pa| Parameters::player_amount_id(pa)}
+          player_amount = params[:player_amount].map! {|pa| Parameters::PLAYER_AMOUNT.fetch(pa)}
           url << "category3=#{player_amount.join(',')}"
         end
 
         url << GAMES_ONLY
-
-        puts url
 
         url
       end

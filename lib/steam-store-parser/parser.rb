@@ -7,11 +7,12 @@ module SteamStoreParser
 
     def initialize(params)
       @base_client = BaseClient.new(params)
-      @pages_nb = page_amount
-      @games = parse_games
     end
 
-
+    def games
+      @pages_nb = page_amount
+      parse_games
+    end
 
     private
       def page_amount

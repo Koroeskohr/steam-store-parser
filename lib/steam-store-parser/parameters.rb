@@ -39,27 +39,5 @@ module SteamStoreParser
       linux: 'linux'
     }
 
-    # @param [Symbol] label The label of the tag
-    # @return [Number] Id of the chosen tag
-    def self.tag_id(label)
-      raise LabelDoesntExistError unless TAGS.has_key? label
-      TAGS[label]
-    end
-
-    # @param [Symbol] label The label of the tag
-    # @return [Number] Id of the chosen tag
-    def self.player_amount_id(label)
-      raise LabelDoesntExistError unless PLAYER_AMOUNT.has_key? label
-      PLAYER_AMOUNT[label]
-    end
-
-    # @param [Symbol] label The label of the tag
-    # @return [Number] Id of the chosen tag
-    def self.os_id(label)
-      raise LabelDoesntExistError unless OS.has_key? label
-      OS[label]
-    end
-
-
   end
 end
