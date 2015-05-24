@@ -1,6 +1,5 @@
 module SteamStoreParser
   class Parser
-    attr_reader :games
 
     PAGE_AMOUNT_CSS = '.search_pagination_right a'
     CONTAINER_CSS = '#search_result_container div'
