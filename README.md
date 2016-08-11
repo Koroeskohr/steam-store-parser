@@ -1,5 +1,6 @@
 # steam-store-parser
 *Parses Steam's web store to get lists of games from categories or keywords*
+*Warning : * this hasn't been tested in a while, I don't even know if it still works :^)
 
 ```ruby
 # see full tag list in SteamStoreParser::Parameters
